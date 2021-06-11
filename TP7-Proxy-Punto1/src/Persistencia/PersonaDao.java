@@ -19,7 +19,7 @@ public class PersonaDao {
 	private static final String USUARIO = "root";
 	private static final String CLAVE = "";
 
-	private Connection obtenerConexion() throws SQLException {
+	private Connection obtenerConexion() {
 		// Utilice aquí su motor de BD preferido
 		Connection conexion = null;
 
@@ -32,7 +32,7 @@ public class PersonaDao {
 			throw new RuntimeException("Error al cargar el controlador");
 
 		} catch (SQLException e) {
-			throw new SQLException("Error en la conexion");
+			throw new RuntimeException("Error en la conexion");
 		}
 
 		return conexion;
